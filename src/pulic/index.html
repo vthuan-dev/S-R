@@ -1,14 +1,27 @@
-<form id="registerForm">
-    <input type="text" id="name" placeholder="Name" required />
-    <input type="password" id="passwd" placeholder="Password" required />
-    <input type="email" id="email" placeholder="Email" required />
-    <input type="text" id="userAddress" placeholder="Address" required />
-    <input type="date" id="dob" placeholder="Date of Birth" required />
-    <input type="text" id="gender" placeholder="Gender" required />
-    <select id="roleId" required>
-        <option value="1">Farmer</option>
-        <option value="2">Inspector</option>
-    </select>
-    <input type="text" id="regionId" placeholder="Region ID" required />
-    <button type="submit">Register</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register User</title>
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+    <script src="./backend/app.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="registerForm">
+        <h2>Register</h2>
+        <input type="text" id="name" placeholder="Name" required />
+        <input type="email" id="email" placeholder="Email" required />
+        <input type="text" id="userAddress" placeholder="Address" required />
+        <input type="date" id="dob" placeholder="Date of Birth" required />
+        <input type="text" id="gender" placeholder="Gender" required />
+        <select id="roleId" required>
+            <option value="1">Farmer</option>
+            <option value="2">Inspector</option>
+        </select>
+        <input type="text" id="regionId" placeholder="Region ID" required />
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>

@@ -1,5 +1,5 @@
-const contractAddress = '0xda58Bc74cC49cd4AA81A74b3670Ed25C2ACf2Cc2';
-const contractABI = ['..\[build\contracts\Product.json'];
+const contractAddress = '0xdC076F8692d37A7f891597da90fC7eE84ADe0CC0'; // Deployed contract address
+const contractABI = [/* ABI of your smart contract */];
 let userContract;
 
 window.addEventListener('load', async () => {
