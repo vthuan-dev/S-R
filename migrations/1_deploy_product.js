@@ -1,10 +1,7 @@
-const Product = artifacts.require("Product");
+//lấy thông tin về hợp đồng thông qua artifacts.require
+const User = artifacts.require("User");
 
+//deploy hợp đồng thông qua deployer 
 module.exports = function (deployer) {
-  deployer.deploy(Product).then(function(instance) {
-    const productContractAddress = instance.address;
-    // Sau khi triển khai hợp đồng sản phẩm, triển khai hợp đồng GrapefruitTraceability
-    const GrapefruitTraceability = artifacts.require("GrapefruitTraceability");
-    deployer.deploy(GrapefruitTraceability, productContractAddress);
-  });
+  deployer.deploy(User);
 };

@@ -15,6 +15,7 @@ contract User {
     }
 
     mapping(address => UserStruct) public users;
+    address[] public userAddresses;
     uint256 public userCount;
 
     event UserAdded(uint256 id, string name, uint256 roleId, uint256 regionId);
@@ -41,6 +42,8 @@ contract User {
             createdAt: block.timestamp
         });
 
+        userAddresses.push(msg.sender);
+
         emit UserAdded(userCount, _name, _roleId, _regionId);
     }
 
@@ -50,18 +53,15 @@ contract User {
 
     function getUsersByRegion(uint256 _regionId) public view returns (UserStruct[] memory) {
         uint256 count = 0;
-        address[] memory userAddresses = new address[](userCount);
-        uint256 index = 0;
-
-        for (uint256 i = 0; i < userCount; i++) {
+        for (uint256 i = 0; i < userAddresses.length; i++) {
             if (users[userAddresses[i]].regionId == _regionId) {
                 count++;
             }
         }
 
         UserStruct[] memory regionUsers = new UserStruct[](count);
-        index = 0;
-        for (uint256 i = 0; i < userCount; i++) {
+        uint256 index = 0;
+        for (uint256 i = 0; i < userAddresses.length; i++) {
             if (users[userAddresses[i]].regionId == _regionId) {
                 regionUsers[index] = users[userAddresses[i]];
                 index++;
